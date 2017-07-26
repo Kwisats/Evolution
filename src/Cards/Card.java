@@ -10,4 +10,8 @@ public class Card {
     public Property getProperty() {
         return property;
     }
+
+    public void showDescription() {
+        property.showDescription();
+    }
 }

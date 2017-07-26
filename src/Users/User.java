@@ -1,10 +1,10 @@
-package User;
+package Users;
 
 public class User {
     private String nickName;
     //may be List
     private Animal[] animals = new Animal[10];
-
+    private Hand hand = new Hand();
 
     public void User(String nickName) {
         this.nickName = nickName;

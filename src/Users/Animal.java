@@ -1,4 +1,4 @@
-package User;
+package Users;
 
 import Cards.Card;
 import Cards.Property;
@@ -14,7 +14,12 @@ public class Animal {
         return 0;
     }
 
-    public void getProperty(Card card) {
+    public void addProperty(Card card) {
         propertyList.add(card.getProperty());
+    }
+
+    public void showProperties() {
+        //show them all
+
     }
 }
