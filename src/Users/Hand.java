@@ -20,4 +20,12 @@ public class Hand {
             card.showDescription();
         }
     }
+
+    public void add(Card card) {
+        cards.add(card);
+    }
+
+    public void remove(Card card) {
+        cards.remove(card);
+    }
 }
