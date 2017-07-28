@@ -14,4 +14,8 @@ public class Card {
     public void showDescription() {
         property.showDescription();
     }
+
+    public String toString() {
+        return property.toString();
+    }
 }

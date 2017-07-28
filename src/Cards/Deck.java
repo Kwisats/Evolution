@@ -1,6 +1,9 @@
 package Cards;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 public class Deck {
     private HashMap<String, Integer> availableProperties;
@@ -9,21 +12,23 @@ public class Deck {
 
     public Deck (HashMap<String, Integer> availableProperties, HashMap<String, String> propertiesDescriptions) {
         //не создавай если дека уже существует
+
         countOfDecks = 1;
         this.availableProperties = availableProperties;
         this.propertiesDescriptions = propertiesDescriptions;
     }
 
     public Card giveCard() {
-        //создать свойство, затем создать карту и удалить карту из пула
-        //Property property = new Property();
-        //Card card = new Card();
-        return null;
+        List<String> keys = new ArrayList<>(availableProperties.keySet());
+        String chosenKey = keys.get((new Random()).nextInt(availableProperties.size()));
+        Property property = new Property(chosenKey, propertiesDescriptions.get(chosenKey));
+        if (availableProperties.put(chosenKey, availableProperties.get(chosenKey) - 1) == 1) {
+            availableProperties.remove(chosenKey);
+        }
+        return new Card(property);
     }
 
     public String toString () {
-        System.out.println(availableProperties);
-        System.out.println(propertiesDescriptions);
-        return "";
+        return availableProperties + "\n" + propertiesDescriptions + "\n";
     }
 }

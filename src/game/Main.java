@@ -15,6 +15,8 @@ public class Main {
         propertiesDescriptions.put("name2", "description2");
         Deck deck = new Deck(availableProperties, propertiesDescriptions);
         System.out.println(deck);
+        System.out.println(deck.giveCard());
+        System.out.println(deck);
 
         Property property = new Property("someName", "someDescription");
         System.out.println(property);
