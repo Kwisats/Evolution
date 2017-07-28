@@ -3,7 +3,7 @@ package Cards;
 public class Card {
     private Property property;
 
-    public void Card(Property property) {
+    public Card(Property property) {
         this.property = property;
     }
 

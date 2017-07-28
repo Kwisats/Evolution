@@ -1,13 +1,19 @@
 package Users;
 
+import Cards.Deck;
+
 public class User {
     private String nickName;
     //may be List
     private Animal[] animals = new Animal[10];
-    private Hand hand = new Hand();
+    private Hand hand;
+    private Deck deck;
 
-    public void User(String nickName) {
+    public User(String nickName, Deck deck)
+    {
         this.nickName = nickName;
+        this.deck = deck;
+        hand = new Hand(deck);
     }
 
     public int getScore() {
