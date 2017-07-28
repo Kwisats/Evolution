@@ -1,36 +1,38 @@
 package Users;
 
 import Cards.Deck;
+import Cards.Card;
+import java.util.List;
 
 public class User {
     private String nickName;
-    //may be List
-    private Animal[] animals = new Animal[10];
+    private List<Animal> animals;
     private Hand hand;
-    private Deck deck;
 
-    public User(String nickName, Deck deck)
-    {
+    public User(String nickName, Deck deck) {
         this.nickName = nickName;
-        this.deck = deck;
         hand = new Hand(deck);
     }
 
     public int getScore() {
         int score = 0;
-        // may be cycle for the List
-        for(int i = 0; i < animals.length; i++) {
-            score += animals[i].getScore();
+        for(Animal animal : animals) {
+            score += animal.getScore();
         }
         return score;
     }
 
-    public void setProperty(Animal animal) {
-
+    public void setPropertyFromCardTo(Animal animal, Card card) {
+        animal.addProperty(card.getProperty());
     }
 
-    public void putAnimal() {
-        Animal animal = new Animal();
-        //put animal on table
+    public void putAnimal(Card card) {
+        animals.add(new Animal());
+        hand.remove(card);
     }
+
+    public void takeCardFrom(Deck deck) {
+        hand.add(deck.giveCard());
+    }
+
 }
