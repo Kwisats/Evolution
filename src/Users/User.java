@@ -2,11 +2,13 @@ package Users;
 
 import Cards.Deck;
 import Cards.Card;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
     private String nickName;
-    private List<Animal> animals;
+    private List<Animal> animals = new ArrayList<>();
     private Hand hand;
 
     public User(String nickName, Deck deck) {
