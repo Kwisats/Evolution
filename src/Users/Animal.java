@@ -19,7 +19,7 @@ public class Animal {
 
     public void showProperties() {
         for (Property property : propertyList) {
-            System.out.print(property);
+            System.out.println(property);
         }
     }
 }

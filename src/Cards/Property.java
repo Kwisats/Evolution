@@ -16,6 +16,6 @@ public class Property {
     }
 
     public String toString() {
-        return name + "\n" + description + "\n";
+        return name + "\n" + description;
     }
 }
