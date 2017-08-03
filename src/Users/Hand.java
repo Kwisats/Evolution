@@ -28,4 +28,8 @@ public class Hand {
     public void remove(Card card) {
         cards.remove(card);
     }
+
+    public int size() {
+        return cards.size();
+    }
 }
